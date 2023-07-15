@@ -54,13 +54,12 @@ function game() {
     while (playerScore < 3 && cpuScore < 3) {
         let playerSelection;
         playerSelection = prompt("Round: " + roundNum + "\n\nRock, Paper or Scissors?");
-
+        
         playerSelection = playerSelection.toLowerCase().trim();
         let cpuSelection = getComputerChoice();
 
         while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-            // playerSelection = prompt(playerSelection + " is not a valid option in Rock Paper Scissors, please try again.");
-             playerSelection = prompt("God dammit jason, what the fuck is wrong with you? YOu have to type rock paper or scissors. nothing else. jesus");
+            playerSelection = prompt(playerSelection + " is not a valid option in Rock Paper Scissors, please try again.");
         }
         let result = playRound(playerSelection, cpuSelection);
 
