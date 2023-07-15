@@ -20,7 +20,7 @@ function playRound(playerSelection = "", computerSelection) {
     computerSelection = computerSelection.toLowerCase();
 
     if (playerSelection === computerSelection) {
-        alert("Oh dang, it's a tie! you both played " + playerSelection);
+        alert("Oh dang, it's a tie! you both played " + playerSelection)+". Gotta go again.";
         return "tie";
     }
 
@@ -49,7 +49,9 @@ function game() {
     let cpuScore = 0;
     let roundNum = 1;
 
-    while (playerScore + cpuScore < 5) {
+    alert("We're going to play rock paper scissors. First one to 3 wins.\n\nGood luck!")
+
+    while (playerScore < 3 && cpuScore < 3) {
         let playerSelection;
         playerSelection = prompt("Round: " + roundNum + "\n\nRock, Paper or Scissors?");
 
@@ -68,7 +70,7 @@ function game() {
 
     let result = (playerScore > cpuScore) ? "You Win!" : (cpuScore > playerScore) ? "You Lose :(" : "Meh. It's a tie. Better play again.";
 
-    let gameOverMsg = "Final Results\nNumber of rounds: " + roundNum + "\nPlayer: " + playerScore + "\nCPU Score: " + cpuScore + "\n\n" + result;
+    let gameOverMsg = "Final Results\nNumber of rounds played: " + roundNum + "\nPlayer: " + playerScore + "\nCPU Score: " + cpuScore + "\n\n" + result;
 
     alert(gameOverMsg);
 }
