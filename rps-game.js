@@ -55,7 +55,7 @@ function game() {
         let playerSelection;
         playerSelection = prompt("Round: " + roundNum + "\n\nRock, Paper or Scissors?");
 
-        playerSelection = playerSelection.toLowerCase();
+        playerSelection = playerSelection.toLowerCase().trim();
         let cpuSelection = getComputerChoice();
 
         while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
