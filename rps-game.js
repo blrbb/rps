@@ -1,7 +1,8 @@
+game();
+
 // Randomly returns rock,paper,scissors
 function getComputerChoice() {
     let randomSelection = Math.ceil(Math.random() * 3);
-    let result;
 
     switch (randomSelection) {
         case 1:
@@ -16,6 +17,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection = "", computerSelection) {
+    // Double check to make sure inputs are all lowercase
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
 
@@ -71,15 +73,7 @@ function game() {
 
     let result = (playerScore > cpuScore) ? "You Win!" : (cpuScore > playerScore) ? "You Lose :(" : "Meh. It's a tie. Better play again.";
 
-    let gameOverMsg = "Final Results\nNumber of rounds played: " + roundNum + "\nPlayer: " + playerScore + "\nCPU Score: " + cpuScore + "\n\n" + result;
+    let gameOverMsg = "Final Results\nNumber of rounds played: " + roundNum + "\nPlayer Score: " + playerScore + "\nCPU Score: " + cpuScore + "\n\n" + result;
 
     alert(gameOverMsg);
 }
-
-game();
-
-// const playerSelection = "rock";
-// const computerSelection = getComputerChoice();
-// console.log("Player: " + playerSelection);
-// console.log("Computer: " + computerSelection);
-// console.log(playRound(playerSelection, computerSelection));
