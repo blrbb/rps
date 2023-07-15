@@ -59,7 +59,8 @@ function game() {
         let cpuSelection = getComputerChoice();
 
         while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-            playerSelection = prompt(playerSelection + " is not a valid option in Rock Paper Scissors, please try again.");
+            // playerSelection = prompt(playerSelection + " is not a valid option in Rock Paper Scissors, please try again.");
+             playerSelection = prompt("God dammit jason, what the fuck is wrong with you? YOu have to type rock paper or scissors. nothing else. jesus");
         }
         let result = playRound(playerSelection, cpuSelection);
 
