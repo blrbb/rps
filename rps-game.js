@@ -60,6 +60,7 @@ function game() {
 
         while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
             playerSelection = prompt(playerSelection + " is not a valid option in Rock Paper Scissors, please try again.");
+            playerSelection = playerSelection.toLowerCase().trim();
         }
         let result = playRound(playerSelection, cpuSelection);
 
