@@ -1,6 +1,15 @@
-game();
-
+// game();
 // Randomly returns rock,paper,scissors
+addEventListeners();
+
+function addEventListeners() {
+    let rpsButtons = document.querySelectorAll(".rps-selection");
+
+    rpsButtons.forEach(button => button.addEventListener("click", function () {
+        playRound(button.id, getComputerChoice());
+    }))
+}
+
 function getComputerChoice() {
     let randomSelection = Math.ceil(Math.random() * 3);
 
@@ -22,7 +31,7 @@ function playRound(playerSelection = "", computerSelection) {
     computerSelection = computerSelection.toLowerCase();
 
     if (playerSelection === computerSelection) {
-        alert("Oh dang, it's a tie! you both played " + playerSelection)+". Gotta go again.";
+        displayResult("Oh dang, it's a tie! you both played " + playerSelection) + ". Gotta go again.";
         return "tie";
     }
 
@@ -30,21 +39,24 @@ function playRound(playerSelection = "", computerSelection) {
         case "rock scissors":
         case "scissors paper":
         case "paper rock":
-            alert("Congratulatations! You win!!!! " + capitalize(playerSelection) + " beats " + capitalize(computerSelection));
+            displayResult("Congratulatations! You win!!!! " + capitalize(playerSelection) + " beats " + capitalize(computerSelection));
             return "win";
 
         default:
-            alert("You lose :( " + capitalize(computerSelection) + " beats " + capitalize(playerSelection));
+            displayResult("You lose :( " + capitalize(computerSelection) + " beats " + capitalize(playerSelection));
             return "lose";
 
     }
-
-    function capitalize(input) {
-        // debugger;
-        let result = input.replace(input, input.toLowerCase()).replace(input.charAt(0), input.charAt(0).toUpperCase());
-        return result;
+    
+    function displayResult(textToDisplay){
+        let resultDiv = document.getElementById("round-results");
+        resultDiv.textContent = textToDisplay;
     }
 }
+    function capitalize(input) {
+        // debugger;
+        return input.replace(input, input.toLowerCase()).replace(input.charAt(0), input.charAt(0).toUpperCase());
+    }
 
 function game() {
     let playerScore = 0;
@@ -56,7 +68,7 @@ function game() {
     while (playerScore < 3 && cpuScore < 3) {
         let playerSelection;
         playerSelection = prompt("Round: " + roundNum + "\n\nRock, Paper or Scissors?");
-        
+
         playerSelection = playerSelection.toLowerCase().trim();
         let cpuSelection = getComputerChoice();
 
