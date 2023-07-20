@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
     <script src="rps-game.js" defer></script>
 </head>
 <body>
-<div id="scoreboard">
-    <div id="cpu-score"></div>
-    <div id="player-score"></div>
-</div>
-<div id="round-results"></div>
-<div class="buttons">
-    <button class="rps-selection" id="rock">Rock</button>
-    <button class="rps-selection" id="paper">Paper</button>
-    <button class="rps-selection" id="scissors">Scissors</button>
+<button id="new-game-button">New Game</button>
+<div id="game-container">
+    <div>Round</div>
+    <div id="round-count"></div>
+    <div id="scoreboard">
+        <div class="scorecard">CPU
+            <div id="cpu-score" class="score"></div>
+        </div>
+        <div class="scorecard">You
+            <div id="player-score" class="score"></div>
+        </div>
+    </div>
+    <div id="round-results"></div>
+    <div class="buttons">
+        <button class="rps-selection" id="rock">Rock</button>
+        <button class="rps-selection" id="paper">Paper</button>
+        <button class="rps-selection" id="scissors">Scissors</button>
+    </div>
+    <div></div>
 </div>
 </body>
 </html>

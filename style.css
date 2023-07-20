@@ -1,0 +1,53 @@
+body {
+    font-family: monospace;
+    padding: 20px;
+    font-size: 30px;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100px;
+}
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.game-over-result {
+    font-weight:bolder;
+    font-size: xxx-large;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+ button {
+     font-weight: 700;
+     font-size: 38px;
+     padding: 15px 25px;
+     font-size: large;
+     border-radius: 8px;
+ }
+ .scorecard{
+     flex: 100px;
+     border:3px dotted blue;
+     padding: 15px;
+     margin: 15px;
+     max-width: 60px;
+     font-weight: bold;
+ }
+ #round-results {
+     margin: 50px auto;
+ }
+ 
+ .score {
+     font-size: 50px;
+ }
+ #round-results{
+     text-align: center;
+ }
